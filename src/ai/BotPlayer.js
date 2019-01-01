@@ -96,11 +96,13 @@ BotPlayer.prototype.update = function() { // Overrides the update function from 
                 //if (check.mass > ignoreMass) {
                     // Prey
                 this.prey.push(check);
+		     this.gameServer.ejectMass(this);
                 //}
             } else if (check.mass > (cell.mass * 1.25)) {
                 // Predator
             //    this.predators.push(check);
 		         this.prey.push(check);
+		     this.gameServer.splitCells(this);
             }
         } else if (t == 1) { // Food
             this.food.push(check);
