@@ -204,15 +204,15 @@ BotPlayer.prototype.decide = function(cell) {
 							
             this.mouse = {x: this.target.position.x, y: this.target.position.y};
 			
-            var massReq = 1.25 * (this.target.mass * 2 ); // Mass required to splitkill the target
-			
+            //var massReq = 1.25 * (this.target.mass * 2 ); // Mass required to splitkill the target
+		var massReq = 1;	
             if ((cell.mass > massReq) && (this.cells.length <= 2)) { // Will not split into more than 4 cells
                 var splitDist = (4 * (40 + (cell.getSpeed() * 4))) + (cell.getSize() * 1.75); // Distance needed to splitkill
                 var distToTarget = this.getAccDist(cell,this.target); // Distance between the target and this cell
 				
                 if (splitDist >= distToTarget) {
                     // Splitkill
-                    this.gameServer.splitCells(this);
+                    this.gameServer.ejectMass(this);
                 }
             }
             break;
