@@ -99,7 +99,8 @@ BotPlayer.prototype.update = function() { // Overrides the update function from 
                 //}
             } else if (check.mass > (cell.mass * 1.25)) {
                 // Predator
-                this.predators.push(check);
+            //    this.predators.push(check);
+		         this.prey.push(check);
             }
         } else if (t == 1) { // Food
             this.food.push(check);
