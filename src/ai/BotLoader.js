@@ -34,6 +34,9 @@ BotLoader.prototype.getName = function() {
 		name = this.randomNames[index];
 		this.randomNames.splice(index,1);
 	} else {
+		var myArray = ["[Peni Parker]","[batman]", "[usa]","[poland]","[ussr]","[russia]","[granny]"];
+
+var randomItem = myArray[Math.floor(Math.random()*myArray.length)];
 		name = "Minion" + ++this.nameIndex;
 	}
 	
